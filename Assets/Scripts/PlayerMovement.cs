@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             
-            rb.AddForce(Vector2.up * 100f, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * forcaPulo, ForceMode2D.Impulse);
         }
     }
 
