@@ -175,10 +175,10 @@ TextureImporter:
       name: Andando_0
       rect:
         serializedVersion: 2
-        x: 966
-        y: 4414
-        width: 66
-        height: 53
+        x: 97
+        y: 456
+        width: 9
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Andando_1
       rect:
         serializedVersion: 2
-        x: 4532
-        y: 4414
-        width: 66
-        height: 53
+        x: 122
+        y: 449
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Andando_2
       rect:
         serializedVersion: 2
-        x: 8175
-        y: 4414
-        width: 66
-        height: 53
+        x: 435
+        y: 456
+        width: 9
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Andando_3
       rect:
         serializedVersion: 2
-        x: 11741
-        y: 4414
-        width: 66
-        height: 53
+        x: 461
+        y: 449
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,10 +263,10 @@ TextureImporter:
       name: Andando_4
       rect:
         serializedVersion: 2
-        x: 569
-        y: 220
-        width: 2995
-        height: 4135
+        x: 783
+        y: 456
+        width: 9
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,10 +285,10 @@ TextureImporter:
       name: Andando_5
       rect:
         serializedVersion: 2
-        x: 1236
-        y: 4339
-        width: 43
-        height: 53
+        x: 808
+        y: 449
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: Andando_6
       rect:
         serializedVersion: 2
-        x: 4135
-        y: 220
-        width: 2995
-        height: 4135
+        x: 1128
+        y: 456
+        width: 9
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,10 +329,10 @@ TextureImporter:
       name: Andando_7
       rect:
         serializedVersion: 2
-        x: 4802
-        y: 4339
-        width: 43
-        height: 53
+        x: 1153
+        y: 449
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: Andando_8
       rect:
         serializedVersion: 2
-        x: 7778
-        y: 220
-        width: 2995
-        height: 4135
+        x: 60
+        y: 61
+        width: 284
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: Andando_9
       rect:
         serializedVersion: 2
-        x: 8445
-        y: 4339
-        width: 43
-        height: 53
+        x: 398
+        y: 61
+        width: 285
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,10 +395,10 @@ TextureImporter:
       name: Andando_10
       rect:
         serializedVersion: 2
-        x: 11344
-        y: 220
-        width: 2995
-        height: 4135
+        x: 746
+        y: 61
+        width: 284
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -417,10 +417,10 @@ TextureImporter:
       name: Andando_11
       rect:
         serializedVersion: 2
-        x: 12011
-        y: 4339
-        width: 43
-        height: 53
+        x: 1091
+        y: 61
+        width: 284
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
