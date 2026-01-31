@@ -25,9 +25,36 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchMask",
+                    "name": "SwitchMask1",
                     "type": "Button",
                     "id": "e3ad4812-1279-4fa8-b5a5-184f04768c4e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchMask2",
+                    "type": "Button",
+                    "id": "dd72a8dd-0f79-4f80-9499-3785ef2747f1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchMask3",
+                    "type": "Button",
+                    "id": "ff94ae74-c3ff-4aeb-89fd-fe1e9fe4bdf5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchMask4",
+                    "type": "Button",
+                    "id": "9c6e8ce3-3a00-4e8a-a03a-1546d7d58d1e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -137,11 +164,44 @@
                 {
                     "name": "",
                     "id": "6fccc520-ec37-439e-9b42-e00b128d92f0",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwitchMask",
+                    "action": "SwitchMask1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0a1d3b0-ad6e-4ad6-bcd3-a723a997ddfa",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMask2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "331ac763-fb05-4e71-bb34-b495f9acd4f4",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMask3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b4b41bab-50a0-4b17-913e-389a197d1d62",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMask4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
