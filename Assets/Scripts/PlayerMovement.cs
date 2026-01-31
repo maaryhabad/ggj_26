@@ -57,6 +57,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Movimentação horizontal mantendo a velocidade vertical do pulo/gravidade
         float velocidadeHorizontal = moveInput.x * velocidade;
-        //rb.linearVelocity = new Vector2(velocidadeHorizontal, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(velocidadeHorizontal, rb.linearVelocity.y);
     }
 }
