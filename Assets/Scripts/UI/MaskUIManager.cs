@@ -9,6 +9,7 @@ public class MaskUIManager :MonoBehaviour {
     public Image iconeFogo;
     public Image iconeNuvem;
     public Image iconeTerra;
+    public Image iconeAgua;
 
     [Header("Configurações Visuais")]
     public Color corBloqueado = new Color(0.2f, 0.2f, 0.2f, 0.5f); // Escuro e transparente
@@ -33,6 +34,7 @@ public class MaskUIManager :MonoBehaviour {
         AtualizarIcone(iconeFogo, gm.fogoResgatado, gm.activeMask == MaskType.mFogo);
         AtualizarIcone(iconeNuvem, gm.nuvemResgatada, gm.activeMask == MaskType.mNuvem);
         AtualizarIcone(iconeTerra, gm.terraResgatada, gm.activeMask == MaskType.mTerra);
+        AtualizarIcone(iconeAgua, gm.terraResgatada, gm.activeMask == MaskType.mAgua);
     }
 
     private void AtualizarIcone(Image img, bool resgatado, bool estaAtiva) {
@@ -42,14 +44,14 @@ public class MaskUIManager :MonoBehaviour {
         if(!resgatado) {
             // Caso a máscara ainda não tenha sido coletada
             img.color = corBloqueado;
-            img.transform.localScale = Vector3.one * 0.8f; // Fica pequena
+            img.transform.localScale = Vector3.one * 0.4f; // Fica pequena
         } else {
             // Caso a máscara já tenha sido coletada (ou seja o ícone X)
             img.color = estaAtiva ? corAtiva : corNormal;
 
             // AJUSTE AQUI: 
             // Se estiver ativa, escala 1.2. Se não estiver, escala 0.8 (pequena)
-            img.transform.localScale = estaAtiva ? Vector3.one * 1.2f : Vector3.one * 0.5f;
+            img.transform.localScale = estaAtiva ? Vector3.one * 1.0f : Vector3.one * 0.3f;
         }
     }
 }
