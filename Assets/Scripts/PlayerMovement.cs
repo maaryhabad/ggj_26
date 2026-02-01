@@ -28,17 +28,13 @@ public class PlayerMovement :MonoBehaviour {
         float velocidadeHorizontal = moveInput.x * velocidade;
         rb.linearVelocity = new Vector2(velocidadeHorizontal, rb.linearVelocity.y);
 
-        // moveInput.x é o valor do seu direcional (-1 a 1)
-        float horizontalMove = moveInput.x;
+        float move = moveInput.x; // valor do seu input (-1 a 1)
 
-        // Avisa o Animator (usamos Mathf.Abs para o valor ser sempre positivo)
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        // Lógica de Flip (Virar o boneco)
-        if (horizontalMove > 0) {
-            transform.localScale = new Vector3(1, 1, 1);
-        } else if (horizontalMove < 0) {
-            transform.localScale = new Vector3(-1, 1, 1);
+        if (move > 0) {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
+        } 
+        else if (move < 0) {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
         }
     }
 
