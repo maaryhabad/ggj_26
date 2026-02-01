@@ -30,7 +30,7 @@ public class GameManager :MonoBehaviour {
     public List<CachoeiraController> cachoeiras = new List<CachoeiraController>();
 
 
-    // Flags para saber se j� resgataste a m�scara
+    // Flags para saber se já resgataste a máscara
     public bool fogoResgatado = false;
     public bool nuvemResgatada = false;
     public bool terraResgatada = false;
@@ -111,9 +111,9 @@ public class GameManager :MonoBehaviour {
     }
 
     private void AplicarEfeitosVisuais(MaskType m) {
-        // 1. Define a cor do flash baseado na m�scara
-        Color corDoImpacto = Color.white; // Cor padr�o
-        float forcaTremida = 0.2f; // Tremida padr�o
+        // 1. Define a cor do flash baseado na máscara
+        Color corDoImpacto = Color.white; // Cor padrão
+        float forcaTremida = 0.2f; // Tremida padrão
 
         switch(m) {
             case MaskType.mFogo:
