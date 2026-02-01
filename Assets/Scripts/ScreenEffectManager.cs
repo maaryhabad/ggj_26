@@ -1,29 +1,49 @@
 using UnityEngine;
+using UnityEngine.UI; // Necessário para acessar o componente Image
 using System.Collections;
 
 public class ScreenEffectManager :MonoBehaviour {
     public static ScreenEffectManager instance;
+
+    [Header("Referências UI")]
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private float duracaoFlash = 0.2f;
+    [SerializeField] private Image overlayImage; // Referência à Imagem para mudar a cor
+
+    [Header("Configurações")]
+    [SerializeField] private float duracaoFadeIn = 0.05f; // Entrada muito rápida
+    [SerializeField] private float duracaoFadeOut = 0.3f; // Saída mais suave
 
     void Awake() {
         instance = this;
+        // Garante que começa invisível
+        if(canvasGroup)
+            canvasGroup.alpha = 0f;
     }
 
-    public void TriggerFlash() {
+    // Agora o método aceita uma COR
+    public void TriggerColoredFlash(Color corDoFlash) {
+        if(overlayImage != null) {
+            overlayImage.color = corDoFlash;
+        }
         StopAllCoroutines();
         StartCoroutine(FadeEffect());
     }
 
     private IEnumerator FadeEffect() {
-        // Sobe o alpha rápido (esconde a troca)
+        // 1. Fade In Rápido (Aparece a cor)
+        float tempo = 0;
+        while(tempo < duracaoFadeIn) {
+            tempo += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, tempo / duracaoFadeIn);
+            yield return null;
+        }
         canvasGroup.alpha = 1f;
 
-        float tempo = 0;
-        while(tempo < duracaoFlash) {
+        // 2. Fade Out Suave (A cor some)
+        tempo = 0;
+        while(tempo < duracaoFadeOut) {
             tempo += Time.deltaTime;
-            // Desce o alpha gradualmente
-            canvasGroup.alpha = Mathf.Lerp(1f, 0f, tempo / duracaoFlash);
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, tempo / duracaoFadeOut);
             yield return null;
         }
         canvasGroup.alpha = 0f;
