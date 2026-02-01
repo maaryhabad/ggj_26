@@ -23,15 +23,17 @@ public class GameManager :MonoBehaviour {
 
 
     public AudioManager audioManager;
-
-
-
-    private MaskType activeMask = MaskType.mNone;
+    public MaskType activeMask = MaskType.mNone;
 
     // private bool mostrarFogo = true; // true = fogo / fase = nuvem
-
     public List<FogoNuvem> nuvemsDeFogo = new List<FogoNuvem>();
     public List<GeiserAgua> geiseres = new List<GeiserAgua>();
+
+
+    // Flags para saber se já resgataste a máscara
+    public bool fogoResgatado = false;
+    public bool nuvemResgatada = false;
+    public bool terraResgatada = false;
 
 
     private void Awake() {
@@ -43,10 +45,26 @@ public class GameManager :MonoBehaviour {
     }
 
 
+
     public void MudarMascara(MaskType m) {
-        // --- DISPARAR EFEITOS VISUAIS ---
-        AplicarEfeitosVisuais(m);
-        // -------------------------------
+        activeMask = m; // <--- Importante: Atualiza o estado atual
+        AplicarEfeitosVisuais(m); // --- DISPARAR EFEITOS VISUAIS ---
+
+        // Marca como resgatada na primeira vez que usas
+        switch(m) {
+            case MaskType.mFogo:
+                fogoResgatado = true;
+                break;
+            case MaskType.mNuvem:
+                nuvemResgatada = true;
+                break;
+            case MaskType.mTerra:
+                terraResgatada = true;
+                break;
+        }
+
+        // Atualiza a UI (vamos criar este script a seguir)
+        MaskUIManager.instance.AtualizarPainel();
 
         activeMask = m; // ATUALIZA a máscara ativa
         Debug.Log("Nova Máscara: " + m);
