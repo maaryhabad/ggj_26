@@ -16,12 +16,12 @@ public enum MaskType {
 
 
 public class GameManager :MonoBehaviour {
-    
+
 
 
     public static GameManager instance;
-    
-    
+
+
     public AudioManager audioManager;
 
 
@@ -30,7 +30,8 @@ public class GameManager :MonoBehaviour {
 
     // private bool mostrarFogo = true; // true = fogo / fase = nuvem
 
-    public List <FogoNuvem> nuvemsDeFogo = new List<FogoNuvem>();
+    public List<FogoNuvem> nuvemsDeFogo = new List<FogoNuvem>();
+    public List<GeiserAgua> geiseres = new List<GeiserAgua>();
 
 
     private void Awake() {
@@ -51,6 +52,8 @@ public class GameManager :MonoBehaviour {
         Debug.Log("Nova Máscara: " + m);
 
         MudarFogo(m); // Passa a nova máscara para os objetos
+        MudarGeiseres(m);
+
         audioManager.MudarMusica(m);
     }
 
@@ -64,6 +67,15 @@ public class GameManager :MonoBehaviour {
             nuvemsDeFogo[i].mudarFogo(m); // Agora sim usa o 'm' correto!
         }
 
+    }
+
+    private void MudarGeiseres(MaskType m) {
+        // Limpa referências nulas caso tenha destruído algum objeto
+        geiseres.RemoveAll(g => g == null);
+
+        foreach(GeiserAgua g in geiseres) {
+            g.AtualizarEstado(m);
+        }
     }
 
     private void AplicarEfeitosVisuais(MaskType m) {
