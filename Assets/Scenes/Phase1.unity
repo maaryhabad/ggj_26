@@ -872,6 +872,9 @@ MonoBehaviour:
   velocidade: 5
   forcaPulo: 10
   mascaraAtual: 0
+  pulosEfetuados: 0
+  maxPulosAr: 2
+  estaNoChao: 0
 --- !u!114 &1064084000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,7 +1762,7 @@ GameObject:
   - component: {fileID: 1817325699}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

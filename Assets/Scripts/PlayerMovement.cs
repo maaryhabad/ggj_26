@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement :MonoBehaviour {
+
     private Vector2 moveInput;
     private Rigidbody2D rb;
 
@@ -11,59 +12,79 @@ public class PlayerMovement :MonoBehaviour {
     public float forcaPulo = 10f;
 
     [Header("Sistema de Máscaras")]
-    // 0 = Sem Máscara, 1 = Ar (Pulo)
-    public int mascaraAtual = 0;
+    public int mascaraAtual = 0; // 1 = Ar/Nuvem
+
+    [Header("Controle de Pulo")]
+    [SerializeField] private int pulosEfetuados = 0;
+    [SerializeField] private int maxPulosAr = 2;
+    [SerializeField] private bool estaNoChao;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
     }
+    void Update() {
+        float velocidadeHorizontal = moveInput.x * velocidade;
+        rb.linearVelocity = new Vector2(velocidadeHorizontal, rb.linearVelocity.y);
+    }
 
+    // --- DETECÇÃO DE CHÃO ---
+    // Reseta os pulos ao tocar em algo com a Tag "Chao"
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.CompareTag("Chao")) {
+            estaNoChao = true;
+            pulosEfetuados = 0;
+        }
+    }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+    private void OnCollisionExit2D(Collision2D collision) {
+        if(collision.gameObject.CompareTag("Chao")) {
+            estaNoChao = false;
+        }
+    }
 
-        Debug.Log("A");
+    // --- DETECÇÃO DE MÁSCARAS (Trigger/Atravessa) ---
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Atravessei algo: " + other.gameObject.name);
 
-        if(collision.gameObject.tag == "mascara") {
+        if(other.CompareTag("mascara")) {
+            NumeroMascara scriptMascara = other.GetComponent<NumeroMascara>();
 
-            int numeroMascara = collision.gameObject.GetComponent<NumeroMascara>().numeroMascara;
-            MudarMascara(numeroMascara);
-
+            if(scriptMascara != null) {
+                MudarMascara(scriptMascara.numeroMascara);
+                Debug.Log("Máscara coletada! Número: " + scriptMascara.numeroMascara);
+            } else {
+                Debug.LogError("O objeto tem a tag 'mascara' mas falta o script 'NumeroMascara'!");
+            }
         }
     }
 
 
+    // --- MUDANÇA DE MÁSCARA ---
     private void MudarMascara(int numeroMascara) {
-        // Alterna entre 0 (Sem máscara) e 1 (Ar)
-        // mascaraAtual = (mascaraAtual == 0) ? 1 : 0;
         mascaraAtual = numeroMascara;
-        Debug.Log("Alterando Mascara para" + numeroMascara);
+        Debug.Log("Alterando Mascara para " + numeroMascara);
 
-        // Feedback visual rápido: Muda a cor do player
-        // Debug.Log("Máscara Atual: " + (mascaraAtual == 1 ? "AR" : "NENHUMA"));
+        // Resetamos os pulos ao trocar de máscara para evitar bugs
+        pulosEfetuados = 0;
 
         switch(mascaraAtual) {
             case 1:
                 GetComponent<SpriteRenderer>().color = Color.cyan;
                 GameManager.instance.MudarMascara(MaskType.mNuvem);
-                // Debug.Log("Máscara Atual: " + "AR");
                 break;
             case 2:
                 GetComponent<SpriteRenderer>().color = Color.red;
                 GameManager.instance.MudarMascara(MaskType.mFogo);
-                // Debug.Log("Máscara Atual: " + "FOGO");
                 break;
             case 3:
                 GetComponent<SpriteRenderer>().color = Color.brown;
                 GameManager.instance.MudarMascara(MaskType.mTerra);
-                // Debug.Log("Máscara Atual: " + "TERRA");
                 break;
             default:
                 GetComponent<SpriteRenderer>().color = Color.white;
                 GameManager.instance.MudarMascara(MaskType.mNone);
-                // Debug.Log("Máscara Atual: " + "NENHUMA");
                 break;
         }
-
     }
 
 
@@ -73,16 +94,37 @@ public class PlayerMovement :MonoBehaviour {
         moveInput = context.ReadValue<Vector2>();
     }
 
+    // --- LÓGICA DE PULO ---
     // Chamado pela Action 'jump'
     public void OnJump(InputAction.CallbackContext context) {
-        if(mascaraAtual == 1 && context.started) {
-            Debug.Log("Botão apertado! Tentando pular...");
+        // 1. Se NÃO for a máscara de ar (1), ignora o comando de pulo completamente
+        if(mascaraAtual != 1)
+            return;
 
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
-
-            rb.AddForce(Vector2.up * forcaPulo, ForceMode2D.Impulse);
+        // 2. Só executa no frame em que o botão é pressionado
+        if(context.started) {
+            // 3. Verifica se ainda tem pulos disponíveis (máximo de 2 para o Ar)
+            if(pulosEfetuados < maxPulosAr) {
+                ExecutarPulo();
+            }
         }
     }
+
+    private void ExecutarPulo() {
+        pulosEfetuados++;
+
+        // Zera a velocidade vertical para o segundo pulo ter a mesma força que o primeiro
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+
+        rb.AddForce(Vector2.up * forcaPulo, ForceMode2D.Impulse);
+
+        Debug.Log($"Pulo {pulosEfetuados}/{maxPulosAr} executado!");
+    }
+
+
+
+
+
 
     // Chamado pela Action 'SwitchMask' (Tecla E)
     public void OnSwitchMask1(InputAction.CallbackContext context) {
@@ -110,9 +152,5 @@ public class PlayerMovement :MonoBehaviour {
     }
 
 
-    void Update() {
-        // Movimentação horizontal mantendo a velocidade vertical do pulo/gravidade
-        float velocidadeHorizontal = moveInput.x * velocidade;
-        rb.linearVelocity = new Vector2(velocidadeHorizontal, rb.linearVelocity.y);
-    }
+   
 }
