@@ -834,9 +834,9 @@ MonoBehaviour:
   audioSource: {fileID: 694221170}
   musicaNormal: {fileID: 8300000, guid: 1dce6ab5e1fad5e419a57d7d861d14b9, type: 3}
   musicaFogo: {fileID: 8300000, guid: f7747defda336404e87ddbcca939a6bb, type: 3}
-  musicaVento: {fileID: 8300000, guid: 1dce6ab5e1fad5e419a57d7d861d14b9, type: 3}
-  musicaTerra: {fileID: 8300000, guid: 710c0b985eef597439a9bd9f6e6f3233, type: 3}
-  musicaAgua: {fileID: 0}
+  musicaVento: {fileID: 8300000, guid: 44f49048c878c4461b10b3563fd45f32, type: 3}
+  musicaTerra: {fileID: 8300000, guid: dfaf7d2ec32d8473b97526791e96901c, type: 3}
+  musicaAgua: {fileID: 8300000, guid: e27a74ee6f415463e8e918b024bda6b1, type: 3}
 --- !u!114 &694221172
 MonoBehaviour:
   m_ObjectHideFlags: 0
