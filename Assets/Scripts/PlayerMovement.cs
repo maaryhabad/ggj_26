@@ -32,10 +32,9 @@ public class PlayerMovement :MonoBehaviour {
 
         float move = moveInput.x; // valor do seu input (-1 a 1)
 
-        if (move > 0) {
+        if(move > 0) {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
-        } 
-        else if (move < 0) {
+        } else if(move < 0) {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
         }
     }
@@ -63,7 +62,7 @@ public class PlayerMovement :MonoBehaviour {
             NumeroMascara scriptMascara = other.GetComponent<NumeroMascara>();
 
             if(scriptMascara != null) {
-                MudarMascara(scriptMascara.numeroMascara);
+                MudarMascaraResgate(scriptMascara.numeroMascara);
                 Debug.Log("Máscara coletada! Número: " + scriptMascara.numeroMascara);
             } else {
                 Debug.LogError("O objeto tem a tag 'mascara' mas falta o script 'NumeroMascara'!");
@@ -74,6 +73,45 @@ public class PlayerMovement :MonoBehaviour {
 
     // --- MUDANÇA DE MÁSCARA ---
     private void MudarMascara(int numeroMascara) {
+        mascaraAtual = numeroMascara;
+        Debug.Log("Alterando Mascara para " + numeroMascara);
+
+        // Resetamos os pulos ao trocar de máscara para evitar bugs
+        pulosEfetuados = 0;
+
+        switch(mascaraAtual) {
+            case 1:
+                if(GameManager.instance.nuvemResgatada) {
+                    GetComponent<SpriteRenderer>().color = Color.cyan;
+                    GameManager.instance.MudarMascara(MaskType.mNuvem);
+                }
+                break;
+            case 2:
+                if(GameManager.instance.fogoResgatado) {
+                    GetComponent<SpriteRenderer>().color = Color.red;
+                    GameManager.instance.MudarMascara(MaskType.mFogo);
+                }
+                break;
+            case 3:
+                if(GameManager.instance.terraResgatada) {
+                    GetComponent<SpriteRenderer>().color = Color.brown;
+                    GameManager.instance.MudarMascara(MaskType.mTerra);
+                }
+                break;
+            case 4:
+                if(GameManager.instance.aguaResgatada) {
+                    GetComponent<SpriteRenderer>().color = Color.yellow;
+                    GameManager.instance.MudarMascara(MaskType.mAgua);
+                }
+                break;
+            default:
+                GetComponent<SpriteRenderer>().color = Color.white;
+                GameManager.instance.MudarMascara(MaskType.mNone);
+                break;
+        }
+    }
+
+    private void MudarMascaraResgate(int numeroMascara) {
         mascaraAtual = numeroMascara;
         Debug.Log("Alterando Mascara para " + numeroMascara);
 
@@ -169,5 +207,5 @@ public class PlayerMovement :MonoBehaviour {
     }
 
 
-   
+
 }
