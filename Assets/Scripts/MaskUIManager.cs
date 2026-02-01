@@ -36,17 +36,20 @@ public class MaskUIManager :MonoBehaviour {
     }
 
     private void AtualizarIcone(Image img, bool resgatado, bool estaAtiva) {
-        if(!resgatado) {
-            img.color = corBloqueado; // Máscara que nunca foi pega
-            img.transform.localScale = Vector3.one * 0.5f; // Um pouco menor
-        } else {
-            img.color = corNormal; // Já coletada mas não ativa
-            img.transform.localScale = Vector3.one;
+        if(img == null)
+            return;
 
-            if(estaAtiva) {
-                img.color = corAtiva; // Destaque para a ativa
-                img.transform.localScale = Vector3.one * 1.2f; // Efeito de "zoom" na ativa
-            }
+        if(!resgatado) {
+            // Caso a máscara ainda não tenha sido coletada
+            img.color = corBloqueado;
+            img.transform.localScale = Vector3.one * 0.8f; // Fica pequena
+        } else {
+            // Caso a máscara já tenha sido coletada (ou seja o ícone X)
+            img.color = estaAtiva ? corAtiva : corNormal;
+
+            // AJUSTE AQUI: 
+            // Se estiver ativa, escala 1.2. Se não estiver, escala 0.8 (pequena)
+            img.transform.localScale = estaAtiva ? Vector3.one * 1.2f : Vector3.one * 0.5f;
         }
     }
 }
