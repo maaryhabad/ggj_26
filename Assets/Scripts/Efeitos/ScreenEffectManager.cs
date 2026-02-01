@@ -7,11 +7,11 @@ public class ScreenEffectManager :MonoBehaviour {
 
     [Header("Referências UI")]
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private Image overlayImage; // Refer�ncia � Imagem para mudar a cor
+    [SerializeField] private Image overlayImage; // Referência à Imagem para mudar a cor
 
     [Header("Configurações")]
-    [SerializeField] private float duracaoFadeIn = 0.05f; // Entrada muito r�pida
-    [SerializeField] private float duracaoFadeOut = 0.3f; // Sa�da mais suave
+    [SerializeField] private float duracaoFadeIn = 0.05f; // Entrada muito rápida
+    [SerializeField] private float duracaoFadeOut = 0.3f; // Saída mais suave
 
     void Awake() {
         instance = this;

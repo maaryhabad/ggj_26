@@ -6,11 +6,11 @@ public class FogoNuvem : MonoBehaviour
     public SpriteRenderer minhaSprite;
 
 
-    [Header("ConfiguraÁıes")]
+    [Header("Configura√ß√µes")]
     public float velocidade = 4f;
     public float forcaTrampolim = 12f;
 
-    // Vari·vel para controlar se ele deve se mover
+    // VariÔøΩvel para controlar se ele deve se mover
     private MaskType estadoAtual = MaskType.mNone;
     private Camera cam;
 
@@ -25,12 +25,12 @@ public class FogoNuvem : MonoBehaviour
     }
 
     void Update() {
-        // S” SE MOVE SE O ESTADO FOR FOGO
+        // S√≥ SE MOVE SE O ESTADO FOR FOGO
         if(estadoAtual == MaskType.mFogo) {
             transform.Translate(Vector2.left * velocidade * Time.deltaTime);
         }
 
-        // 2. VerificaÁ„o de limite da c‚mera
+        // 2. Verifica√ß√£o de limite da c√¢mera
         VerificarSaidaPelaEsquerda();
     }
 
@@ -40,32 +40,32 @@ public class FogoNuvem : MonoBehaviour
 
         switch(m) {
             case MaskType.mFogo:
-                minhaSprite.enabled = true; // VisÌvel
+                minhaSprite.enabled = true; // Vis√≠vel
                 minhaSprite.sprite = fogo;
                 gameObject.tag = "Dano"; // Vira perigo
                 break;
 
             case MaskType.mNuvem:
-                minhaSprite.enabled = true; // VisÌvel
+                minhaSprite.enabled = true; // Vis√≠vel
                 minhaSprite.sprite = nuvem;
                 gameObject.tag = "Trampolim"; // Vira plataforma
                 break;
 
             default:
-                minhaSprite.enabled = false; // INVISÕVEL
-                gameObject.tag = "Dano"; // Ainda d· dano!
+                minhaSprite.enabled = false; // INVis√≠vel
+                gameObject.tag = "Dano"; // Ainda d√° dano!
                 break;
         }
     }
 
     private void VerificarSaidaPelaEsquerda() {
-        // Converte a posiÁ„o do mundo para a vis„o da c‚mera (0 a 1)
+        // Converte a posi√ß√£o do mundo para a vis√£o da c√¢mera (0 a 1)
         Vector3 viewportPos = cam.WorldToViewportPoint(transform.position);
 
         // Se o X for menor que 0, ele saiu pela esquerda
-        // Usamos -0.2f como uma margem de seguranÁa para o objeto sumir totalmente
+        // Usamos -0.2f como uma margem de seguran√ßa para o objeto sumir totalmente
         if(viewportPos.x < -0.2f) {
-            // Antes de destruir, removemos da lista do GameManager para evitar erros de referÍncia nula
+            // Antes de destruir, removemos da lista do GameManager para evitar erros de refer√™ncia nula
             if(GameManager.instance != null) {
                 GameManager.instance.nuvemsDeFogo.Remove(this);
             }
