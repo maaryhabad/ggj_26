@@ -1,26 +1,26 @@
 using UnityEngine;
-using UnityEngine.UI; // Necessário para acessar o componente Image
+using UnityEngine.UI; // NecessÃ¡rio para acessar o componente Image
 using System.Collections;
 
 public class ScreenEffectManager :MonoBehaviour {
     public static ScreenEffectManager instance;
 
-    [Header("Referências UI")]
+    [Header("ReferÃªncias UI")]
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private Image overlayImage; // Referência à Imagem para mudar a cor
+    [SerializeField] private Image overlayImage; // Referï¿½ncia ï¿½ Imagem para mudar a cor
 
-    [Header("Configurações")]
-    [SerializeField] private float duracaoFadeIn = 0.05f; // Entrada muito rápida
-    [SerializeField] private float duracaoFadeOut = 0.3f; // Saída mais suave
+    [Header("ConfiguraÃ§Ãµes")]
+    [SerializeField] private float duracaoFadeIn = 0.05f; // Entrada muito rï¿½pida
+    [SerializeField] private float duracaoFadeOut = 0.3f; // Saï¿½da mais suave
 
     void Awake() {
         instance = this;
-        // Garante que começa invisível
+        // Garante que comeÃ§a invisÃ­vel
         if(canvasGroup)
             canvasGroup.alpha = 0f;
     }
 
-    // Agora o método aceita uma COR
+    // Agora o mÃ©todo aceita uma COR
     public void TriggerColoredFlash(Color corDoFlash) {
         if(overlayImage != null) {
             overlayImage.color = corDoFlash;
@@ -30,7 +30,7 @@ public class ScreenEffectManager :MonoBehaviour {
     }
 
     private IEnumerator FadeEffect() {
-        // 1. Fade In Rápido (Aparece a cor)
+        // 1. Fade In RÃ¡pido (Aparece a cor)
         float tempo = 0;
         while(tempo < duracaoFadeIn) {
             tempo += Time.deltaTime;

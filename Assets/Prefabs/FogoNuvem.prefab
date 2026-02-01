@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2295756315634780376, guid: f1310bc237e204442b992f09aea42e72, type: 3}
+  m_Sprite: {fileID: -2704313193725043776, guid: 5b503ac030edf466295d96d3d880160c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.74, y: 1.38}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00fd327aeee58d242b0ded05c847d39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FogoNuvem
-  fogo: {fileID: -2295756315634780376, guid: f1310bc237e204442b992f09aea42e72, type: 3}
-  nuvem: {fileID: -3446994302538887568, guid: d0bac48813ee2bd42b9376edeaea3442, type: 3}
+  fogo: {fileID: -7402772833993885721, guid: 28d19696c25a8416b98c6878f47ee0a8, type: 3}
+  nuvem: {fileID: -2704313193725043776, guid: 5b503ac030edf466295d96d3d880160c, type: 3}
   minhaSprite: {fileID: 3294217816113571289}
   velocidade: 4
   forcaTrampolim: 12
