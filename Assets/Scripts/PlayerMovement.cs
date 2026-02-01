@@ -6,6 +6,7 @@ public class PlayerMovement :MonoBehaviour {
 
     private Vector2 moveInput;
     private Rigidbody2D rb;
+    private Animator animator;
 
     [Header("Configurações de Movimento")]
     public float velocidade = 5f;
@@ -21,10 +22,24 @@ public class PlayerMovement :MonoBehaviour {
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     void Update() {
         float velocidadeHorizontal = moveInput.x * velocidade;
         rb.linearVelocity = new Vector2(velocidadeHorizontal, rb.linearVelocity.y);
+
+        // moveInput.x é o valor do seu direcional (-1 a 1)
+        float horizontalMove = moveInput.x;
+
+        // Avisa o Animator (usamos Mathf.Abs para o valor ser sempre positivo)
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+        // Lógica de Flip (Virar o boneco)
+        if (horizontalMove > 0) {
+            transform.localScale = new Vector3(1, 1, 1);
+        } else if (horizontalMove < 0) {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     // --- DETECÇÃO DE CHÃO ---
