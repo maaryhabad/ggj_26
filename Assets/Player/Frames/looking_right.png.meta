@@ -1,34 +1,31 @@
 fileFormatVersion: 2
-guid: be0f96c0061224c32b28e1eb2fd9bd7a
+guid: 73f0648dc0f8e441ba99e3a85a74e4cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6767832845440702453
-    second: look_left_0
+      213: -8005960906053472837
+    second: looking_right_0
   - first:
-      213: 2380007504851474299
-    second: look_left_1
+      213: 1356161165788179745
+    second: looking_right_1
   - first:
-      213: -3848038471494111620
-    second: look_left_2
+      213: -3008687411536412345
+    second: looking_right_2
   - first:
-      213: -5852455627130882893
-    second: look_left_3
+      213: 4958130179581264158
+    second: looking_right_3
   - first:
-      213: 6920519935665001170
-    second: look_left_4
+      213: 5336216790894156667
+    second: looking_right_4
   - first:
-      213: 4881799263889691199
-    second: look_left_5
+      213: -5480373715321038179
+    second: looking_right_5
   - first:
-      213: -3620481517407478704
-    second: look_left_6
+      213: -7034514334619742971
+    second: looking_right_6
   - first:
-      213: -2567014000165978847
-    second: look_left_7
-  - first:
-      213: -2180389781969420590
-    second: look_left_8
+      213: 7707256115278092606
+    second: looking_right_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -163,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: look_left_0
+      name: looking_right_0
       rect:
         serializedVersion: 2
-        x: 97
-        y: 455
-        width: 9
-        height: 7
+        x: 0
+        y: 0
+        width: 205
+        height: 285
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b08294472e3d312a0800000000000000
-      internalID: -6767832845440702453
+      spriteID: bbda40d29fc15e090800000000000000
+      internalID: -8005960906053472837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: look_left_1
+      name: looking_right_1
       rect:
         serializedVersion: 2
-        x: 122
-        y: 448
+        x: 26
+        y: 284
         width: 7
-        height: 7
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b779f61473c770120800000000000000
-      internalID: 2380007504851474299
+      spriteID: 12debf0256d02d210800000000000000
+      internalID: 1356161165788179745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: look_left_2
+      name: looking_right_2
       rect:
         serializedVersion: 2
-        x: 618
-        y: 448
+        x: 249
+        y: 284
         width: 7
-        height: 7
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7e6e80e565099ac0800000000000000
-      internalID: -3848038471494111620
+      spriteID: 741ce2b6dbefe36d0800000000000000
+      internalID: -3008687411536412345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: look_left_3
+      name: looking_right_3
       rect:
         serializedVersion: 2
-        x: 641
-        y: 455
-        width: 9
-        height: 7
+        x: 267
+        y: 279
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b4b0216d96e7cea0800000000000000
-      internalID: -5852455627130882893
+      spriteID: e11c5180121dec440800000000000000
+      internalID: 4958130179581264158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: look_left_4
+      name: looking_right_4
       rect:
         serializedVersion: 2
-        x: 961
-        y: 448
+        x: 472
+        y: 284
         width: 7
-        height: 7
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d2525a0730aa0060800000000000000
-      internalID: 6920519935665001170
+      spriteID: b7b98b916ec0e0a40800000000000000
+      internalID: 5336216790894156667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: look_left_5
+      name: looking_right_5
       rect:
         serializedVersion: 2
-        x: 984
-        y: 455
-        width: 9
-        height: 7
+        x: 490
+        y: 279
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f3298ecc092afb340800000000000000
-      internalID: 4881799263889691199
+      spriteID: d9ad6e5642dc1f3b0800000000000000
+      internalID: -5480373715321038179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: look_left_6
+      name: looking_right_6
       rect:
         serializedVersion: 2
-        x: 60
-        y: 60
-        width: 284
-        height: 392
+        x: 222
+        y: 0
+        width: 206
+        height: 283
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,20 +307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05c5f07fd3771cdc0800000000000000
-      internalID: -3620481517407478704
+      spriteID: 50dc89dab72606e90800000000000000
+      internalID: -7034514334619742971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: look_left_7
+      name: looking_right_7
       rect:
         serializedVersion: 2
-        x: 403
-        y: 60
-        width: 284
-        height: 392
+        x: 445
+        y: 0
+        width: 205
+        height: 283
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,30 +329,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12df6a21e52206cd0800000000000000
-      internalID: -2567014000165978847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: look_left_8
-      rect:
-        serializedVersion: 2
-        x: 746
-        y: 60
-        width: 284
-        height: 392
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2de32d5ab03bdb1e0800000000000000
-      internalID: -2180389781969420590
+      spriteID: e399b102a9ca5fa60800000000000000
+      internalID: 7707256115278092606
       vertices: []
       indices: 
       edges: []
@@ -374,15 +349,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      look_left_0: -6767832845440702453
-      look_left_1: 2380007504851474299
-      look_left_2: -3848038471494111620
-      look_left_3: -5852455627130882893
-      look_left_4: 6920519935665001170
-      look_left_5: 4881799263889691199
-      look_left_6: -3620481517407478704
-      look_left_7: -2567014000165978847
-      look_left_8: -2180389781969420590
+      looking_right_0: -8005960906053472837
+      looking_right_1: 1356161165788179745
+      looking_right_2: -3008687411536412345
+      looking_right_3: 4958130179581264158
+      looking_right_4: 5336216790894156667
+      looking_right_5: -5480373715321038179
+      looking_right_6: -7034514334619742971
+      looking_right_7: 7707256115278092606
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

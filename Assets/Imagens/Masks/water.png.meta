@@ -1,43 +1,10 @@
 fileFormatVersion: 2
-guid: 3058c8aab4b484700a843c581ebdf103
+guid: 159105d68ed2d443089c0fd4426e27f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9184952582076397725
-    second: Andando_0
-  - first:
-      213: -8426096522859284273
-    second: Andando_1
-  - first:
-      213: -5404251022018343097
-    second: Andando_2
-  - first:
-      213: 4172559162386168553
-    second: Andando_3
-  - first:
-      213: -5530246264150881729
-    second: Andando_4
-  - first:
-      213: -9080178406485202730
-    second: Andando_5
-  - first:
-      213: 2437970359732768972
-    second: Andando_6
-  - first:
-      213: -2815191209090610246
-    second: Andando_7
-  - first:
-      213: 4982071889269989881
-    second: Andando_8
-  - first:
-      213: 7233556715118279141
-    second: Andando_9
-  - first:
-      213: -703175178201464126
-    second: Andando_10
-  - first:
-      213: -2901844814927549468
-    second: Andando_11
+      213: 8509550459451208454
+    second: water_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -172,89 +139,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Andando_4
+      name: water_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 62
-        width: 282
-        height: 400
+        x: 0
+        y: 0
+        width: 190
+        height: 247
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 43e1f5887d0fe494cb26c063667f5dd1
-      internalID: -5530246264150881729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Andando_6
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 62
-        width: 283
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6f93803375ed954c935b97ba1d83675
-      internalID: 2437970359732768972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Andando_8
-      rect:
-        serializedVersion: 2
-        x: 747
-        y: 62
-        width: 282
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f5111648cc867643be999b5dadf3862
-      internalID: 4982071889269989881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Andando_10
-      rect:
-        serializedVersion: 2
-        x: 1092
-        y: 62
-        width: 282
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99ca3aaad4180d84a9fa7a478c841f07
-      internalID: -703175178201464126
+      spriteID: 603f9ddae0ff71670800000000000000
+      internalID: 8509550459451208454
       vertices: []
       indices: 
       edges: []
@@ -263,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a09c157f8adb4b743a39bc193b86a894
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -271,22 +172,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":358.0,"y":524.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Andando_0: -9184952582076397725
-      Andando_1: -8426096522859284273
-      Andando_10: -703175178201464126
-      Andando_11: 555062182
-      Andando_2: -5404251022018343097
-      Andando_3: 4172559162386168553
-      Andando_4: -5530246264150881729
-      Andando_5: 1668436063
-      Andando_6: 2437970359732768972
-      Andando_7: 1221407019
-      Andando_8: 4982071889269989881
-      Andando_9: 272544765
+      water_0: 8509550459451208454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

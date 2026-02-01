@@ -28,6 +28,8 @@ public class PlayerMovement :MonoBehaviour {
         float velocidadeHorizontal = moveInput.x * velocidade;
         rb.linearVelocity = new Vector2(velocidadeHorizontal, rb.linearVelocity.y);
 
+        animator.SetBool("isMoving", Mathf.Abs(moveInput.x) > 0.1f);
+
         float move = moveInput.x; // valor do seu input (-1 a 1)
 
         if (move > 0) {
@@ -90,6 +92,10 @@ public class PlayerMovement :MonoBehaviour {
             case 3:
                 GetComponent<SpriteRenderer>().color = Color.brown;
                 GameManager.instance.MudarMascara(MaskType.mTerra);
+                break;
+            case 4:
+                GetComponent<SpriteRenderer>().color = Color.yellow;
+                GameManager.instance.MudarMascara(MaskType.mAgua);
                 break;
             default:
                 GetComponent<SpriteRenderer>().color = Color.white;

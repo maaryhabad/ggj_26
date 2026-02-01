@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioManager :MonoBehaviour {
+public class AudioManager : MonoBehaviour {
 
 
     [SerializeField]
@@ -9,7 +9,7 @@ public class AudioManager :MonoBehaviour {
     // public AudioMixerSnapshot effectMood;
 
     [SerializeField]
-    private AudioClip musicaNormal, musicaFogo, musicaVento, musicaTerra;
+    private AudioClip musicaNormal, musicaFogo, musicaVento, musicaTerra, musicaAgua;
 
     private void Start() {
         // effectMood.TransitionTo(0.5f);
@@ -21,7 +21,7 @@ public class AudioManager :MonoBehaviour {
 
         if(audioSource!= null) {
 
-            // 1. Salva a posição exata da amostra atual
+            // 1. Salva a posiÃ§Ã£o exata da amostra atual
             int currentSamples = audioSource.timeSamples;
 
             switch(m) {
@@ -34,6 +34,9 @@ public class AudioManager :MonoBehaviour {
                 case MaskType.mTerra:
                     newClip = musicaTerra;
                     break;
+                case MaskType.mAgua:
+                    newClip = musicaAgua;
+                    break;
                 case MaskType.mNone:
                     newClip = musicaNormal;
                     break;
@@ -45,10 +48,9 @@ public class AudioManager :MonoBehaviour {
             // 2. Troca o clipe
             audioSource.clip = newClip;
 
-            // 3. Ajusta a posição no novo clipe 
-            // (O modulo '%' garante que não dê erro se o novo clipe for levemente menor)
+            // 3. Ajusta a posiÃ§Ã£o no novo clipe 
+            // (O modulo '%' garante que nÃ£o dÃª erro se o novo clipe for levemente menor)
             audioSource.timeSamples = currentSamples % newClip.samples;
-
 
             audioSource.Play();
 

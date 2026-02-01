@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1057705725968055210}
   - component: {fileID: 413185377933641156}
   m_Layer: 0
-  m_Name: GanhaPoder-Fogo
+  m_Name: GanhaPoder-Agua
   m_TagString: mascara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 9204931480678746970, guid: ad2f2ee21a2404c9cb7b9991387082e6, type: 3}
+  m_Sprite: {fileID: 8509550459451208454, guid: 159105d68ed2d443089c0fd4426e27f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.19, y: 0.17}
+  m_Size: {x: 1.9, y: 2.47}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -131,8 +131,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.17, y: 2.68}
-    newSize: {x: 0.19, y: 0.17}
+    oldSize: {x: 1.9, y: 2.47}
+    newSize: {x: 1.9, y: 2.47}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddab083bca43b914786167294966a1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NumeroMascara
-  numeroMascara: 2
+  numeroMascara: 4

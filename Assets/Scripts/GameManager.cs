@@ -10,14 +10,13 @@ public enum MaskType {
     mFogo,
     mNuvem,
     mTerra,
+    mAgua,
     mNone
 
 }
 
 
 public class GameManager :MonoBehaviour {
-
-
 
     public static GameManager instance;
 
@@ -31,10 +30,13 @@ public class GameManager :MonoBehaviour {
     public List<CachoeiraController> cachoeiras = new List<CachoeiraController>();
 
 
-    // Flags para saber se já resgataste a máscara
+    // Flags para saber se jï¿½ resgataste a mï¿½scara
     public bool fogoResgatado = false;
     public bool nuvemResgatada = false;
     public bool terraResgatada = false;
+    public bool aguaResgatada = false;
+
+
 
 
     private void Awake() {
@@ -62,15 +64,18 @@ public class GameManager :MonoBehaviour {
             case MaskType.mTerra:
                 terraResgatada = true;
                 break;
+            case MaskType.mAgua:
+                aguaResgatada = true;
+                break;
         }
 
         // Atualiza a UI (vamos criar este script a seguir)
         MaskUIManager.instance.AtualizarPainel();
 
-        activeMask = m; // ATUALIZA a máscara ativa
-        Debug.Log("Nova Máscara: " + m);
+        activeMask = m; // ATUALIZA a mï¿½scara ativa
+        Debug.Log("Nova MÃ¡scara: " + m);
 
-        MudarFogo(m); // Passa a nova máscara para os objetos
+        MudarFogo(m); // Passa a nova mï¿½scara para os objetos
         MudarGeiseres(m);
         MudarCachoeiras(m);
 
@@ -87,7 +92,7 @@ public class GameManager :MonoBehaviour {
 
     private void MudarFogo(MaskType m) {
 
-        // Remove objetos destruídos da lista para evitar erros
+        // Remove objetos destruï¿½dos da lista para evitar erros
         nuvemsDeFogo.RemoveAll(item => item == null);
 
         for(int i = 0; i < nuvemsDeFogo.Count; i++) {
@@ -97,7 +102,7 @@ public class GameManager :MonoBehaviour {
     }
 
     private void MudarGeiseres(MaskType m) {
-        // Limpa referências nulas caso tenha destruído algum objeto
+        // Limpa referï¿½ncias nulas caso tenha destruï¿½do algum objeto
         geiseres.RemoveAll(g => g == null);
 
         foreach(GeiserAgua g in geiseres) {
@@ -106,9 +111,9 @@ public class GameManager :MonoBehaviour {
     }
 
     private void AplicarEfeitosVisuais(MaskType m) {
-        // 1. Define a cor do flash baseado na máscara
-        Color corDoImpacto = Color.white; // Cor padrão
-        float forcaTremida = 0.2f; // Tremida padrão
+        // 1. Define a cor do flash baseado na mï¿½scara
+        Color corDoImpacto = Color.white; // Cor padrï¿½o
+        float forcaTremida = 0.2f; // Tremida padrï¿½o
 
         switch(m) {
             case MaskType.mFogo:
@@ -127,20 +132,20 @@ public class GameManager :MonoBehaviour {
                 forcaTremida = 0.5f; // Terra treme pesado!
                 break;
             default:
-                // Um cinza para "sem máscara"
+                // Um cinza para "sem mÃ¡scara"
                 corDoImpacto = Color.gray;
                 break;
         }
 
         // 2. Chama o Flash Colorido (se o script existir)
         if(ScreenEffectManager.instance != null) {
-            // Usei um alpha de 0.7f para não tapar 100% a visão, fica mais estiloso
+            // Usei um alpha de 0.7f para nÃ£o tapar 100% a visÃ£o, fica mais estiloso
             corDoImpacto.a = 0.7f;
             ScreenEffectManager.instance.TriggerColoredFlash(corDoImpacto);
         }
 
         if(CameraShake.instance != null) {
-            // Agora o valor é apenas um multiplicador de força
+            // Agora o valor Ã© apenas um multiplicador de forÃ§a
             float intensidade = (m == MaskType.mTerra) ? 1.5f : 0.5f;
             CameraShake.instance.Tremer(intensidade);
         }
