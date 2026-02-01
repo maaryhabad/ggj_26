@@ -140,6 +140,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "a553cfea-f258-45d2-92ab-44e49ffa1471",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "fabe9c15-2b18-4d0f-8534-c34a4b1c5fc3",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "4fac1993-352f-486e-81b1-9f81673d66b0",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e8c75ba0-2b55-45ef-9df8-2ca911448699",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "b405bfc0-962c-49ed-be6f-3b322b9a8e73",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "001a2d16-b394-40f0-b2aa-7de995210fd2",
                     "path": "<Keyboard>/space",
@@ -163,8 +218,30 @@
                 },
                 {
                     "name": "",
+                    "id": "a389c2f6-9868-4fbf-afae-e7208ab6ceb3",
+                    "path": "<HID::SHANWAN USB Joystick>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnJump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6fccc520-ec37-439e-9b42-e00b128d92f0",
                     "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMask1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6698d9a1-16f4-4649-afd8-86da33af2b80",
+                    "path": "<HID::SHANWAN USB Joystick>/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -185,6 +262,17 @@
                 },
                 {
                     "name": "",
+                    "id": "2667a192-1b2d-4865-b431-c5d0a2de55c6",
+                    "path": "<HID::SHANWAN USB Joystick>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMask2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "331ac763-fb05-4e71-bb34-b495f9acd4f4",
                     "path": "<Keyboard>/3",
                     "interactions": "",
@@ -196,8 +284,30 @@
                 },
                 {
                     "name": "",
+                    "id": "cb0ff557-96fb-4b4e-a47d-a59c85f8598f",
+                    "path": "<HID::SHANWAN USB Joystick>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMask3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b4b41bab-50a0-4b17-913e-389a197d1d62",
                     "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchMask4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c195d2d9-8cb7-4b45-939f-74e2f144ad0b",
+                    "path": "<HID::SHANWAN USB Joystick>/button8",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
