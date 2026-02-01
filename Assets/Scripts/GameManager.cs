@@ -20,6 +20,12 @@ public class GameManager :MonoBehaviour {
 
 
     public static GameManager instance;
+    
+    
+    public AudioManager audioManager;
+
+
+
     private MaskType activeMask = MaskType.mNone;
 
     // private bool mostrarFogo = true; // true = fogo / fase = nuvem
@@ -36,12 +42,27 @@ public class GameManager :MonoBehaviour {
     }
 
 
-    public void MudarFogo(MaskType m) {
+    public void MudarMascara(MaskType m) {
+        // 1. Dispara o efeito visual de tela
+        if(ScreenEffectManager.instance != null) {
+            ScreenEffectManager.instance.TriggerFlash();
+        }
 
-        // mostrarFogo = fogo;
+        activeMask = m; // ATUALIZA a máscara ativa
+        Debug.Log("Nova Máscara: " + m);
+
+        MudarFogo(m); // Passa a nova máscara para os objetos
+        audioManager.MudarMusica(m);
+    }
+
+
+    private void MudarFogo(MaskType m) {
+
+        // Remove objetos destruídos da lista para evitar erros
+        nuvemsDeFogo.RemoveAll(item => item == null);
 
         for(int i = 0; i < nuvemsDeFogo.Count; i++) {
-            nuvemsDeFogo[i].mudarFogo(activeMask);
+            nuvemsDeFogo[i].mudarFogo(m); // Agora sim usa o 'm' correto!
         }
 
     }

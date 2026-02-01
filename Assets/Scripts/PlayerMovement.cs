@@ -44,22 +44,23 @@ public class PlayerMovement :MonoBehaviour {
         switch(mascaraAtual) {
             case 1:
                 GetComponent<SpriteRenderer>().color = Color.cyan;
-                Debug.Log("Máscara Atual: " + "AR");
-                GameManager.instance.MudarFogo(MaskType.mNuvem);
+                GameManager.instance.MudarMascara(MaskType.mNuvem);
+                // Debug.Log("Máscara Atual: " + "AR");
                 break;
             case 2:
                 GetComponent<SpriteRenderer>().color = Color.red;
-                Debug.Log("Máscara Atual: " + "FOGO");
-                GameManager.instance.MudarFogo(MaskType.mFogo);
-                    
+                GameManager.instance.MudarMascara(MaskType.mFogo);
+                // Debug.Log("Máscara Atual: " + "FOGO");
                 break;
             case 3:
                 GetComponent<SpriteRenderer>().color = Color.brown;
-                Debug.Log("Máscara Atual: " + "TERRA");
+                GameManager.instance.MudarMascara(MaskType.mTerra);
+                // Debug.Log("Máscara Atual: " + "TERRA");
                 break;
             default:
                 GetComponent<SpriteRenderer>().color = Color.white;
-                Debug.Log("Máscara Atual: " + "NENHUMA");
+                GameManager.instance.MudarMascara(MaskType.mNone);
+                // Debug.Log("Máscara Atual: " + "NENHUMA");
                 break;
         }
 
