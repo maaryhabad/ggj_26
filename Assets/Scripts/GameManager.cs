@@ -25,9 +25,10 @@ public class GameManager :MonoBehaviour {
     public AudioManager audioManager;
     public MaskType activeMask = MaskType.mNone;
 
-    // private bool mostrarFogo = true; // true = fogo / fase = nuvem
+    // LISTAS DE COISAS DO MAPA
     public List<FogoNuvem> nuvemsDeFogo = new List<FogoNuvem>();
     public List<GeiserAgua> geiseres = new List<GeiserAgua>();
+    public List<CachoeiraController> cachoeiras = new List<CachoeiraController>();
 
 
     // Flags para saber se já resgataste a máscara
@@ -71,10 +72,18 @@ public class GameManager :MonoBehaviour {
 
         MudarFogo(m); // Passa a nova máscara para os objetos
         MudarGeiseres(m);
+        MudarCachoeiras(m);
 
         audioManager.MudarMusica(m);
     }
 
+    private void MudarCachoeiras(MaskType m) {
+        // Atualiza todas as cachoeiras do mapa
+        cachoeiras.RemoveAll(c => c == null);
+        foreach(var c in cachoeiras) {
+            c.AtualizarEstado(m);
+        }
+    }
 
     private void MudarFogo(MaskType m) {
 
